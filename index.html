@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Message (For My Girlfriend)</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #0a0a0a;
+            color: #00ff00;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #111;
+        }
+        h1 {
+            color: #ff69b4;
+            text-align: center;
+            border-bottom: 1px dashed #333;
+            padding-bottom: 10px;
+        }
+        pre {
+            background-color: #000;
+            padding: 15px;
+            border-left: 3px solid #ff69b4;
+            overflow-x: auto;
+        }
+        .btn {
+            background-color: #222;
+            color: #00ff00;
+            border: 1px solid #333;
+            padding: 10px 15px;
+            font-family: 'Courier New', monospace;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background-color: #333;
+            border-color: #ff69b4;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #111;
+            padding: 20px;
+            border: 1px solid #ff69b4;
+            max-width: 600px;
+            text-align: center;
+        }
+        .close {
+            color: #ff69b4;
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        @media (max-width: 400px) {
+            body {
+                padding: 5px;
+                font-size: 14px;
+            }
+            .container {
+                padding: 8px;
+                max-width: 98vw;
+            }
+            h1 {
+                font-size: 1.2em;
+            }
+            pre {
+                padding: 8px;
+                font-size: 12px;
+            }
+            .modal-content {
+                padding: 10px;
+                max-width: 95vw;
+                font-size: 14px;
+            }
+            .btn, .modal-content .btn {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>// SECRET_MESSAGE.exe</h1>
+        
+        <pre><code>/**
+ * Welcome to the Orbix interface...
+ * Created by Sir Leslie,
+ * 
+ * Click the button below to reveal.
+ * Warning: May cause cuteness overload.
+ */</code></pre>
+        
+        <button id="revealBtn" class="btn">./REVEAL_MESSAGE</button>
+    </div>
+
+    <!-- Hidden Modal -->
+    <div id="secretModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>💌 For You:</h2>
+            <pre><code>// System.out.println("You're amazing!");
+// console.log("I adore you!");
+# print("You make my world brighter.")
+/* 
+ * Every day with you feels like 
+ * a perfectly optimized loop—endless joy, 
+ * zero bugs. 
+ * 
+ * Happy Girlfriend's Day. ❤️
+ */</code></pre>
+            <p>~ Your Devoted Programmer</p>
+            <a href="letter.html" id="letterBtn" class="btn" style="margin-top: 20px; background-color: #ff69b4; color: #fff; display: inline-block; text-decoration: none;">📖 Read</a>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("secretModal");
+        const btn = document.getElementById("revealBtn");
+        const span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "flex";
+        }
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
